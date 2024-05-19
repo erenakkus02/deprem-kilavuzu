@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deprem Kılavuzu</title>
+    <style>
+        body {
+            background-color: #f1eedc;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .pa1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #151515;
+            color: #eeeeee;
+        }
+
+        .pa1 h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .pa1 .btn-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #c73659;
+            color: #eeeeee;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #a91d3a;
+        }
+
+        .pa2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            flex-grow: 1;
+        }
+
+        .main-image {
+            width: 1203.2px;
+            /* 20% smaller width */
+            height: 632px;
+            /* 20% smaller height */
+            border-radius: 10px;
+            border: 5px solid #c73659;
+        }
+
+        .pa3 {
+            height: 10%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px 0;
+            gap: 20px;
+        }
+
+        .bilgi {
+            width: 100%;
+            max-width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 5px;
+        }
+
+        .bilgi img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #c73659;
+            height: 70%;
+        }
+
+        .bilgi a {
+            margin-top: 10px;
+            color: #151515;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .bilgi a:hover {
+            color: #a91d3a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #151515;
+            color: #eeeeee;
+        }
+
+        .pa4 {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            padding: 100px;
+            margin-top: 30px;
+        }
+        img{
+            max-width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .pa1 h1 {
+                font-size: 1.2em;
+            }
+
+            .pa1 .btn-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .pa3 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bilgi {
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pa1">
+            <header id="header">
+                <h1>DEPREM KILAVUZU</h1>
+            </header>
+            <div class="btn-container">
+                <button class="btn" onclick="window.location.href='index.html'">
+                    <h2>Ana Sayfa</h2>
+                </button>
+                <button class="btn" onclick="window.open('https://deprem.afad.gov.tr/last-earthquakes.html', '_blank')">
+                    <h2>Son depremler</h2>
+                </button>
+                <button class="btn" onclick="window.location.href='iletisim.html'">
+                    <h2>İletişim</h2>
+                </button>
+                <button class="btn"
+                    onclick="window.open('https://www.kartal.bel.tr/Kartal/AfetToplanmaAlanlariHaritasi', '_blank')">
+                    <h2>Deprem Toplanma Alanları</h2>
+                </button>
+                <button class="btn" onclick="window.location.href='deprem_ani.html'">
+                    <h2>Deprem Anı</h2>
+                </button>
+            </div>
+        </div>
+        <div class="pa2" style="height: 50%">
+            <button class="btn prev" onclick="changeImage(-1)" style="z-index: 100">
+                {'<'} </button>
+                    <img class="main-image" id="mainImage"
+                        src="https://img.ulusal.com.tr/rcman/Cw752h395q95gm/storage/files/images/2022/11/11/752x395-1668166284696-b4L7.jpg"
+                        alt="Main Earthquake Image" />
+                    <button class="btn next" onclick="changeImage(1)">{'>'}</button>
+        </div>
+        <div class="pa3">
+            <div class="bilgi b1">
+                <img src="https://bilimgenc.tubitak.gov.tr/sites/default/files/inline-images/deprem%20sonras%C4%B1nda%20neler%20yapmal%C4%B1y%C4%B1z%201.jpg"
+                    alt="Information Image 1" />
+                <a href="https://bilimgenc.tubitak.gov.tr/makale/deprem-sonrasinda-neler-yapmaliyiz">Daha fazla bilgi
+                    için</a>
+            </div>
+            <div class="bilgi b2">
+                <img src="https://www.trthaber.com/dosyalar/images/FofnwzxXsAEPuhD.jpg" alt="Information Image 2" />
+                <a
+                    href="https://www.trthaber.com/haber/infografik/deprem-oncesi-ani-ve-sonrasinda-neler-yapilmali-744813.html">Daha
+                    fazla bilgi için</a>
+            </div>
+            <div class="bilgi b2">
+                <img src="https://technogezgin.com/wp-content/uploads/2019/09/Ozet-Deprem-Oncesinde-Deprem-Aninda-ve-Deprem-Sonrasinda-Yapilmasi-Gerekenler-853x1024.jpg"
+                    alt="Information Image 3" />
+                <a href="https://technogezgin.com/deprem-oncesinde-aninda-ve-sonrasinda-neler-yapilmali/#">Daha fazla
+                    bilgi için</a>
+            </div>
+        </div>
+        <div class="pa4">
+            <img src="https://www.kentekrani.com/wp-content/uploads/2022/04/%C4%B0BB-%C4%B0stanbuldeprem-risk-haritas%C4%B1.png" alt="">
+        </div>
+        </div>
+        <footer>&copy; 2024 Deprem Kılavuzu</footer>
+    </div>
+
+    <script>
+        const images = [
+            "https://img.ulusal.com.tr/rcman/Cw752h395q95gm/storage/files/images/2022/11/11/752x395-1668166284696-b4L7.jpg",
+            "https://lh4.googleusercontent.com/proxy/H83gem5T83GrY2naVtYo6noduojE9Cy6s6FqVUWNNkZF5lSKDnp-4vZuCp__kwW8KZJo6ZXdvskMjhWzC-iy_f2TQJC6gqBlW6xSJ0SCZrQPifyJQIujJ97iWnhZE67E3GAqtySkWY6Bp3oBi3YPkdI_qywBD-ZV80_gQt8PkW53kEHjuvexyZ8-38czLw",
+            "https://corlu.meb.gov.tr/meb_iys_dosyalar/2022_03/03160108_Yeni_Proje_34.jpg",
+        ];
+
+        let currentIndex = 0;
+
+        function changeImage(direction) {
+            currentIndex =
+                (currentIndex + direction + images.length) % images.length;
+            document.getElementById("mainImage").src = images[currentIndex];
+        }
+    </script>
+</body>
+
+</html>
